@@ -40,23 +40,25 @@ const axisProperties = {
       overflowX: 'hidden',
     },
     y: {
-      overflowY: 'hidden',
+      overflowY: 'unset',
     },
     'y-reverse': {
-      overflowY: 'hidden',
+      position: 'absolute',
+      width: '100%',
+      zIndex: 300,
     },
   },
   flexDirection: {
     x: 'row',
     'x-reverse': 'row-reverse',
     y: 'column',
-    'y-reverse': 'column-reverse',
+    'y-reverse': 'column',
   },
   transform: {
     x: translate => `translate(${-translate}%, 0)`,
     'x-reverse': translate => `translate(${translate}%, 0)`,
     y: translate => `translate(0, ${-translate}%)`,
-    'y-reverse': translate => `translate(0, ${translate}%)`,
+    'y-reverse': translate => `translate(0, ${-translate}%)`,
   },
   length: {
     x: 'width',
@@ -78,7 +80,7 @@ const axisProperties = {
       y: [1, 0],
     },
     'y-reverse': {
-      x: [0, -1],
+      x: [0, 1],
       y: [1, 0],
     },
   },
